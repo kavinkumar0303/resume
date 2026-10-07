@@ -1,0 +1,396 @@
+/* ================================
+   GLOBAL STYLES
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+/* ================================
+   HEADER
+================================ */
+
+header {
+    min-height: 420px;
+    background: linear-gradient(135deg, #0f3d91, #2563eb);
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 50px 20px;
+}
+
+header h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+header p {
+    font-size: 19px;
+    margin-bottom: 20px;
+    opacity: 0.95;
+}
+
+header a {
+    display: inline-block;
+
+    background: white;
+    color: #1555b8;
+
+    text-decoration: none;
+    font-weight: 600;
+
+    padding: 11px 25px;
+    border-radius: 8px;
+
+    transition: 0.3s ease;
+}
+
+header a:hover {
+    background: #eaf1ff;
+    transform: translateY(-2px);
+}
+
+/* Profile Images */
+
+header img {
+    width: 150px;
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+    border: 5px solid white;
+
+    margin: 15px 0;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+
+main {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 40px auto;
+}
+
+/* ================================
+   SECTIONS
+================================ */
+
+section {
+    background: white;
+
+    padding: 30px;
+
+    margin-bottom: 25px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+
+    border-left: 5px solid #2563eb;
+}
+
+section h2 {
+    color: #1555b8;
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+
+    padding-bottom: 8px;
+
+    border-bottom: 2px solid #e5e7eb;
+}
+
+section h3 {
+    color: #1e3a8a;
+
+    font-size: 19px;
+
+    margin-bottom: 10px;
+}
+
+section p {
+    margin-bottom: 10px;
+    color: #4b5563;
+}
+
+/* ================================
+   CONTACT
+================================ */
+
+#contact h3 {
+    font-size: 23px;
+    color: #111827;
+}
+
+#contact a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* ================================
+   SKILLS
+================================ */
+
+#skills p {
+    background: #f1f5ff;
+
+    padding: 12px 15px;
+
+    border-radius: 7px;
+
+    margin-bottom: 10px;
+}
+
+#skills strong {
+    color: #1555b8;
+}
+
+/* ================================
+   PROJECT
+================================ */
+
+#project {
+    border-left-color: #0f766e;
+}
+
+#project h2 {
+    color: #0f766e;
+}
+
+#project h3 {
+    font-size: 22px;
+}
+
+#project strong {
+    color: #111827;
+}
+
+/* ================================
+   EDUCATION
+================================ */
+
+#education {
+    border-left-color: #7c3aed;
+}
+
+#education h2 {
+    color: #7c3aed;
+}
+
+#education h3 {
+    color: #4c1d95;
+}
+
+/* ================================
+   ACHIEVEMENTS
+================================ */
+
+#achievements {
+    border-left-color: #d97706;
+}
+
+#achievements h2 {
+    color: #b45309;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    position: relative;
+
+    padding: 10px 10px 10px 30px;
+
+    margin-bottom: 8px;
+
+    background: #f8fafc;
+
+    border-radius: 6px;
+}
+
+li::before {
+    content: "✓";
+
+    position: absolute;
+    left: 10px;
+
+    color: #2563eb;
+
+    font-weight: bold;
+}
+
+/* ================================
+   INTERESTS
+================================ */
+
+#interests {
+    border-left-color: #0891b2;
+}
+
+#interests h2 {
+    color: #0891b2;
+}
+
+/* ================================
+   DECLARATION
+================================ */
+
+#declaration {
+    border-left-color: #64748b;
+}
+
+#declaration h2 {
+    color: #334155;
+}
+
+#declaration p {
+    margin-bottom: 7px;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    background: #111827;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+
+    font-size: 14px;
+
+    opacity: 0.8;
+}
+
+/* ================================
+   HOVER EFFECT
+================================ */
+
+section {
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+section:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 768px) {
+
+    header {
+        min-height: 380px;
+        padding: 40px 15px;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    header p {
+        font-size: 17px;
+    }
+
+    header img {
+        width: 125px;
+        height: 125px;
+    }
+
+    main {
+        width: 94%;
+        margin: 25px auto;
+    }
+
+    section {
+        padding: 22px;
+        margin-bottom: 18px;
+    }
+
+    section h2 {
+        font-size: 22px;
+    }
+
+    section h3 {
+        font-size: 18px;
+    }
+}
+
+/* ================================
+   SMALL MOBILE DEVICES
+================================ */
+
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 27px;
+    }
+
+    header p {
+        font-size: 15px;
+    }
+
+    header img {
+        width: 110px;
+        height: 110px;
+    }
+
+    section {
+        padding: 18px;
+        border-left-width: 4px;
+    }
+
+    section h2 {
+        font-size: 20px;
+    }
+
+    li {
+        font-size: 14px;
+    }
+}
