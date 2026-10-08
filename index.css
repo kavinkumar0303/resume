@@ -1,6 +1,23 @@
-/* ================================
-   GLOBAL STYLES
-================================ */
+/* =========================================================
+   KAVINKUMAR S — PROFESSIONAL RESUME (CORPORATE EDITION)
+   Palette: deep navy · slate grey · white · subtle blue
+   ========================================================= */
+
+:root {
+    --navy:        #12304f;
+    --navy-soft:   #27425f;
+    --slate:       #4a5666;
+    --slate-light: #6b7787;
+    --blue:        #2f6db3;
+    --rule:        #d5dce5;
+    --rule-soft:   #e6eaf0;
+    --band:        #eef2f7;
+    --ink:         #1f2630;
+    --paper:       #ffffff;
+    --desk:        #aab6c4;
+
+    --font-body: "Calibri", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
 
 * {
     margin: 0;
@@ -10,387 +27,789 @@
 
 html {
     scroll-behavior: smooth;
+    background: var(--desk);
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f7fb;
-    color: #1f2937;
-    line-height: 1.6;
+    /* anchors the absolutely positioned profile photo to the resume page */
+    position: relative;
+
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink);
+
+    background: var(--paper);
+
+    width: 100%;
+    max-width: 960px;
+    margin: 32px auto;
+
+    border: 1px solid #8e9db0;
+    box-shadow: 0 8px 28px rgba(10, 28, 50, 0.22);
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
-/* ================================
-   HEADER
-================================ */
+a {
+    color: var(--navy);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   HEADER  (solid navy band)
+   ========================================================= */
 
 header {
-    min-height: 420px;
-    background: linear-gradient(135deg, #0f3d91, #2563eb);
-    color: white;
+    position: relative;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    min-height: 230px;
 
-    text-align: center;
-    padding: 50px 20px;
+    background: var(--navy);
+
+    padding: 40px 240px 34px 55px;
+
+    border-top: 4px solid var(--blue);
 }
 
 header h1 {
-    font-size: 42px;
+    font-size: 40px;
+    line-height: 1.1;
     font-weight: 700;
-    margin-bottom: 15px;
-    letter-spacing: 0.5px;
+    letter-spacing: 1.2px;
+
+    color: #ffffff;
+
+    margin-bottom: 8px;
+}
+
+header h2 {
+    font-size: 17px;
+    line-height: 1.4;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+
+    color: #bfd0e4;
+
+    margin-bottom: 20px;
 }
 
 header p {
-    font-size: 19px;
-    margin-bottom: 20px;
-    opacity: 0.95;
+    font-size: 13.5px;
+    line-height: 1.6;
+
+    color: #d3deec;
+
+    margin-bottom: 5px;
+}
+
+header strong {
+    color: #ffffff;
+    font-weight: 600;
 }
 
 header a {
-    display: inline-block;
-
-    background: white;
-    color: #1555b8;
+    color: #ffffff;
 
     text-decoration: none;
     font-weight: 600;
 
-    padding: 11px 25px;
-    border-radius: 8px;
-
-    transition: 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
 }
 
 header a:hover {
-    background: #eaf1ff;
-    transform: translateY(-2px);
+    border-bottom-color: #ffffff;
 }
 
-/* Profile Images */
+header a:focus-visible {
+    outline-color: #ffffff;
+}
 
-header img {
+header hr {
+    display: none;
+}
+
+
+/* =========================================================
+   PROFILE PHOTO  (sits inside the navy header, right side)
+   ========================================================= */
+
+nav + hr + section {
+    position: absolute;
+
+    /* vertically centred inside the 230px navy header */
+    top: 42px;
+    right: 60px;
+
+    width: 150px;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: none;
+
+    z-index: 5;
+}
+
+nav + hr + section img {
+    display: block;
+
     width: 150px;
     height: 150px;
 
     object-fit: cover;
+    object-position: center;
 
+    border: 4px solid #ffffff;
     border-radius: 50%;
-    border: 5px solid white;
 
-    margin: 15px 0;
+    background: #ffffff;
 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    /* thin outer ring for a refined, corporate look */
+    outline: 1px solid rgba(255, 255, 255, 0.35);
+    outline-offset: 5px;
 }
 
-/* ================================
-   MAIN CONTAINER
-================================ */
 
-main {
-    width: 90%;
-    max-width: 1000px;
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
-    margin: 40px auto;
+nav {
+    background: var(--band);
+
+    padding: 12px 55px;
+
+    border-bottom: 1px solid var(--rule);
 }
 
-/* ================================
-   SECTIONS
-================================ */
+nav a {
+    display: inline-block;
+
+    color: var(--navy-soft);
+
+    text-decoration: none;
+
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+
+    margin-right: 24px;
+
+    padding: 2px 0;
+
+    border-bottom: 1px solid transparent;
+
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+nav a:hover {
+    color: var(--navy);
+    border-bottom-color: var(--blue);
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+   ========================================================= */
 
 section {
-    background: white;
+    background: var(--paper);
 
-    padding: 30px;
+    padding: 22px 55px 20px;
 
-    margin-bottom: 25px;
-
-    border-radius: 12px;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
-
-    border-left: 5px solid #2563eb;
+    border-bottom: 1px solid var(--rule-soft);
 }
 
 section h2 {
-    color: #1555b8;
+    color: var(--navy);
 
-    font-size: 25px;
+    font-size: 15.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.3;
 
-    margin-bottom: 20px;
+    background: var(--band);
 
-    padding-bottom: 8px;
+    padding: 8px 14px;
+    margin-bottom: 14px;
 
-    border-bottom: 2px solid #e5e7eb;
+    border-left: 4px solid var(--navy);
 }
 
 section h3 {
-    color: #1e3a8a;
+    color: var(--navy-soft);
 
-    font-size: 19px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
 
-    margin-bottom: 10px;
+    margin-top: 12px;
+    margin-bottom: 3px;
+}
+
+section h4 {
+    color: var(--slate);
+
+    font-size: 13.5px;
+    font-weight: 700;
+
+    margin-top: 12px;
+    margin-bottom: 4px;
 }
 
 section p {
-    margin-bottom: 10px;
-    color: #4b5563;
+    color: #3c4551;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    margin-bottom: 6px;
 }
 
-/* ================================
-   CONTACT
-================================ */
+section strong {
+    color: var(--ink);
+    font-weight: 600;
+}
 
-#contact h3 {
-    font-size: 23px;
-    color: #111827;
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
+#profile p {
+    max-width: 820px;
+}
+
+
+/* =========================================================
+   EDUCATION
+   ========================================================= */
+
+#education h3 {
+    color: var(--navy);
+
+    font-size: 16px;
+
+    margin-top: 0;
+}
+
+#education h3 + p,
+#education p + p {
+    color: var(--slate);
+}
+
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
+#skills {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    column-gap: 20px;
+}
+
+#skills h2 {
+    grid-column: 1 / -1;
+}
+
+#skills h3,
+#skills p {
+    margin: 0;
+    padding: 9px 0;
+
+    border-bottom: 1px solid var(--rule-soft);
+}
+
+#skills h3 {
+    color: var(--navy);
+
+    font-size: 14px;
+}
+
+#skills p {
+    margin-bottom: 0;
+}
+
+#skills p:last-child,
+#skills h3:nth-last-child(2) {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   PROJECTS
+   ========================================================= */
+
+article {
+    position: relative;
+
+    border-left: 2px solid var(--rule);
+
+    padding: 2px 0 4px 20px;
+
+    margin-bottom: 20px;
+}
+
+article:last-child {
+    margin-bottom: 0;
+}
+
+article h3 {
+    color: var(--navy);
+
+    font-size: 16px;
+
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+article p {
+    margin-bottom: 6px;
+}
+
+
+/* =========================================================
+   LISTS
+   ========================================================= */
+
+ul {
+    margin: 6px 0 8px 20px;
+}
+
+li {
+    color: #3c4551;
+
+    font-size: 14px;
+    line-height: 1.55;
+
+    margin-bottom: 4px;
+
+    padding-left: 3px;
+}
+
+li::marker {
+    color: var(--blue);
+}
+
+#education ul,
+#interests ul {
+    columns: 3;
+    column-gap: 28px;
+}
+
+#education li,
+#interests li {
+    break-inside: avoid;
+
+    margin-bottom: 3px;
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+#contact address {
+    font-style: normal;
+}
+
+#contact p {
+    margin-bottom: 6px;
 }
 
 #contact a {
-    color: #2563eb;
+    color: var(--navy);
+
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 #contact a:hover {
     text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
-/* ================================
-   SKILLS
-================================ */
 
-#skills p {
-    background: #f1f5ff;
+/* =========================================================
+   CAREER
+   ========================================================= */
 
-    padding: 12px 15px;
+#career p:first-of-type {
+    color: var(--navy);
 
-    border-radius: 7px;
-
-    margin-bottom: 10px;
+    font-weight: 600;
 }
 
-#skills strong {
-    color: #1555b8;
-}
 
-/* ================================
-   PROJECT
-================================ */
-
-#project {
-    border-left-color: #0f766e;
-}
-
-#project h2 {
-    color: #0f766e;
-}
-
-#project h3 {
-    font-size: 22px;
-}
-
-#project strong {
-    color: #111827;
-}
-
-/* ================================
-   EDUCATION
-================================ */
-
-#education {
-    border-left-color: #7c3aed;
-}
-
-#education h2 {
-    color: #7c3aed;
-}
-
-#education h3 {
-    color: #4c1d95;
-}
-
-/* ================================
-   ACHIEVEMENTS
-================================ */
-
-#achievements {
-    border-left-color: #d97706;
-}
-
-#achievements h2 {
-    color: #b45309;
-}
-
-ul {
-    list-style: none;
-}
-
-li {
-    position: relative;
-
-    padding: 10px 10px 10px 30px;
-
-    margin-bottom: 8px;
-
-    background: #f8fafc;
-
-    border-radius: 6px;
-}
-
-li::before {
-    content: "✓";
-
-    position: absolute;
-    left: 10px;
-
-    color: #2563eb;
-
-    font-weight: bold;
-}
-
-/* ================================
-   INTERESTS
-================================ */
-
-#interests {
-    border-left-color: #0891b2;
-}
-
-#interests h2 {
-    color: #0891b2;
-}
-
-/* ================================
+/* =========================================================
    DECLARATION
-================================ */
-
-#declaration {
-    border-left-color: #64748b;
-}
-
-#declaration h2 {
-    color: #334155;
-}
+   ========================================================= */
 
 #declaration p {
-    margin-bottom: 7px;
+    margin-bottom: 4px;
 }
 
-/* ================================
-   FOOTER
-================================ */
+
+/* =========================================================
+   FOOTER  (mirrors the header band)
+   ========================================================= */
 
 footer {
-    background: #111827;
+    background: var(--navy);
 
-    color: white;
+    color: #c3d1e3;
 
     text-align: center;
 
-    padding: 20px;
+    padding: 18px 40px;
 
-    margin-top: 40px;
+    border-bottom: 4px solid var(--blue);
 }
 
 footer p {
-    margin: 0;
+    font-size: 12px;
 
-    font-size: 14px;
-
-    opacity: 0.8;
+    margin: 3px 0;
 }
 
-/* ================================
-   HOVER EFFECT
-================================ */
+footer a {
+    color: #ffffff;
 
-section {
-    transition: transform 0.25s ease,
-                box-shadow 0.25s ease;
+    text-decoration: none;
+    font-weight: 600;
 }
 
-section:hover {
-    transform: translateY(-3px);
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+footer a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
-/* ================================
-   RESPONSIVE DESIGN
-================================ */
 
-@media (max-width: 768px) {
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    body {
+        margin: 16px auto;
+        max-width: calc(100% - 32px);
+    }
 
     header {
-        min-height: 380px;
-        padding: 40px 15px;
+        min-height: 205px;
+
+        padding: 34px 190px 28px 36px;
     }
 
     header h1 {
-        font-size: 32px;
+        font-size: 34px;
     }
 
-    header p {
-        font-size: 17px;
+    nav + hr + section {
+        top: 44px;
+        right: 40px;
+
+        width: 120px;
     }
 
-    header img {
-        width: 125px;
-        height: 125px;
+    nav + hr + section img {
+        width: 120px;
+        height: 120px;
     }
 
-    main {
-        width: 94%;
-        margin: 25px auto;
+    nav {
+        padding: 12px 36px;
     }
 
     section {
-        padding: 22px;
-        margin-bottom: 18px;
+        padding: 22px 36px 20px;
+    }
+
+    #skills {
+        grid-template-columns: 160px 1fr;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    html {
+        background: var(--paper);
+    }
+
+    body {
+        width: 100%;
+        max-width: none;
+
+        margin: 0;
+
+        border: none;
+        box-shadow: none;
+    }
+
+    header {
+        min-height: auto;
+
+        padding: 26px 22px 24px;
+    }
+
+    header h1 {
+        font-size: 29px;
+
+        letter-spacing: 0.6px;
+    }
+
+    header h2 {
+        font-size: 15px;
+        margin-bottom: 14px;
+    }
+
+    header p {
+        font-size: 13px;
+    }
+
+    nav {
+        padding: 10px 22px;
+
+        line-height: 2;
+    }
+
+    nav a {
+        margin-right: 14px;
+
+        font-size: 12px;
+    }
+
+    nav + hr + section {
+        position: static;
+
+        width: auto;
+
+        padding: 22px 22px 4px;
+
+        background: var(--paper);
+    }
+
+    nav + hr + section img {
+        width: 112px;
+        height: 112px;
+
+        border-color: var(--rule);
+
+        outline: none;
+    }
+
+    section {
+        padding: 22px 22px;
     }
 
     section h2 {
-        font-size: 22px;
+        font-size: 15px;
+        padding: 7px 12px;
+    }
+
+    #skills {
+        display: block;
+    }
+
+    #skills h3 {
+        padding: 10px 0 0;
+
+        border-bottom: none;
+    }
+
+    #skills p {
+        padding: 2px 0 10px;
+    }
+
+    #education ul,
+    #interests ul {
+        columns: 2;
+        column-gap: 20px;
+    }
+
+    article {
+        padding-left: 14px;
+    }
+
+    footer {
+        padding: 16px 22px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    #education ul,
+    #interests ul {
+        columns: 1;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    nav a {
+        margin-right: 10px;
+    }
+
+    header,
+    nav,
+    section,
+    nav + hr + section {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    nav a {
+        transition: none;
+    }
+}
+
+
+/* =========================================================
+   PRINT / PDF
+   ========================================================= */
+
+@media print {
+
+    @page {
+        size: A4;
+        margin: 10mm;
+    }
+
+    html,
+    body {
+        background: #ffffff;
+    }
+
+    body {
+        max-width: none;
+        margin: 0;
+
+        border: none;
+        box-shadow: none;
+
+        color: #111111;
+        font-size: 10.5pt;
+        line-height: 1.45;
+
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    nav {
+        display: none;
+    }
+
+    header {
+        min-height: 175px;
+
+        padding: 24px 175px 20px 30px;
+    }
+
+    header h1 {
+        font-size: 25pt;
+    }
+
+    header h2 {
+        font-size: 12pt;
+        margin-bottom: 12px;
+    }
+
+    header p {
+        font-size: 10pt;
+    }
+
+    nav + hr + section {
+        position: absolute;
+
+        top: 32px;
+        right: 34px;
+
+        width: 112px;
+    }
+
+    nav + hr + section img {
+        width: 112px;
+        height: 112px;
+
+        outline-offset: 4px;
+    }
+
+    section {
+        padding: 12px 30px;
+
+        box-shadow: none;
+    }
+
+    section h2 {
+        font-size: 11pt;
+
+        padding: 5px 10px;
+        margin-bottom: 8px;
+
+        break-after: avoid;
+    }
+
+    section h3,
+    section h4 {
+        break-after: avoid;
     }
 
     section h3 {
-        font-size: 18px;
-    }
-}
-
-/* ================================
-   SMALL MOBILE DEVICES
-================================ */
-
-@media (max-width: 480px) {
-
-    header h1 {
-        font-size: 27px;
+        font-size: 10.5pt;
     }
 
-    header p {
-        font-size: 15px;
-    }
-
-    header img {
-        width: 110px;
-        height: 110px;
-    }
-
-    section {
-        padding: 18px;
-        border-left-width: 4px;
-    }
-
-    section h2 {
-        font-size: 20px;
-    }
-
+    section p,
     li {
-        font-size: 14px;
+        font-size: 10pt;
+        line-height: 1.45;
+
+        orphans: 3;
+        widows: 3;
+    }
+
+    article,
+    li {
+        break-inside: avoid;
+    }
+
+    footer {
+        padding: 8px 30px;
+    }
+
+    footer p {
+        font-size: 9pt;
     }
 }
